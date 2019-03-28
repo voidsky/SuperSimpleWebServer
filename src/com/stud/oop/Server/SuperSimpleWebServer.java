@@ -1,7 +1,5 @@
 package com.stud.oop.Server;
 
-import com.stud.oop.Server.WebServer;
-
 public class SuperSimpleWebServer {
 
     public static void main(String[] args) {

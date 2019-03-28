@@ -1,7 +1,5 @@
 package com.stud.oop.Protocol;
 
-import com.stud.oop.Protocol.GenericProtocol;
-
 public class PingPongProtocol extends GenericProtocol {
 
     public void initialise() {
@@ -13,7 +11,7 @@ public class PingPongProtocol extends GenericProtocol {
 
     public String processInput(String input) {
 
-        String reply = "";
+        String reply;
 
         if (input.length() >= 3 && input.substring(0, 3).equals("GET")) {
 
