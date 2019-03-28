@@ -1,4 +1,4 @@
-package com.company;
+package com.stud.oop.Protocol;
 
 import java.util.ArrayList;
 import java.util.List;

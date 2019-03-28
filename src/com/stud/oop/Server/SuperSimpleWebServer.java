@@ -1,4 +1,6 @@
-package com.company;
+package com.stud.oop.Server;
+
+import com.stud.oop.Server.WebServer;
 
 public class SuperSimpleWebServer {
 

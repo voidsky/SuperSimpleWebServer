@@ -1,4 +1,6 @@
-package com.company;
+package com.stud.oop.Server;
+
+import com.stud.oop.Protocol.PingPongProtocol;
 
 import java.io.BufferedReader;
 import java.io.IOException;

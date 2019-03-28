@@ -1,4 +1,6 @@
-package com.company;
+package com.stud.oop.Protocol;
+
+import com.stud.oop.Protocol.GenericProtocol;
 
 public class PingPongProtocol extends GenericProtocol {
 
