@@ -1,4 +1,4 @@
-package com.stud.oop.Client;
+package com.stud.oop.client;
 
 import java.io.IOException;
 import java.net.Socket;
