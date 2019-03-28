@@ -24,17 +24,18 @@ public class SuperSimpleWebClient {
             String fromServer, fromUser;
             BufferedReader buffer = new BufferedReader(new InputStreamReader(System.in));
 
-            while ((fromServer = socketIn.readLine()) != null) {
-
-                System.out.println("Server: " + fromServer);
-                if (fromServer.equals("BYE"))
-                    break;
+            while (1==1) {
 
                 fromUser = buffer.readLine();
 
                 if (fromUser != null) {
                     System.out.println("Client: " + fromUser);
                     socketOut.println(fromUser);
+
+                    fromServer = socketIn.readLine();
+                    System.out.println("Server: " + fromServer);
+                    if (fromServer.equals("BYE"))
+                        break;
                 }
             }
 

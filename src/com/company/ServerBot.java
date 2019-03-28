@@ -16,13 +16,14 @@ public class ServerBot implements Runnable {
 
     @Override
     public void run() {
-        try (
-                PrintWriter outWriter =
+        try {
+
+            PrintWriter outWriter =
                         new PrintWriter(clientSocket.getOutputStream(), true);
 
                 BufferedReader inReader = new BufferedReader(
                         new InputStreamReader(clientSocket.getInputStream()));
-        ) {
+
 
             String outString;
             String inString;

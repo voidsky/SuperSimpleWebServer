@@ -1,21 +1,21 @@
 package com.company;
 
-import java.util.Arrays;
+public class PingPongProtocol extends GenericProtocol {
 
-public class PingPongProtocol {
-
-    private String[] knownVerbs = {"PING", "PONG", "EXIT"};
-    private String[] answers = {"PONG", "PING", "BYE"};
+    public void initialise() {
+        this.addVerbAndAnswer("PING", "PONG");
+        this.addVerbAndAnswer("TIK", "TAK");
+        this.addVerbAndAnswer("KNOCK", "KNOCK");
+        this.addVerbAndAnswer("EXIT", "BYE");
+    }
 
     public String processInput(String input) {
 
-        int index = Arrays.asList(knownVerbs).indexOf(input);
+        String reply = "";
 
-        if (input == null) {
-            return "Hi, lets start conversation!";
-        } else if (input.length() >= 3 && input.substring(0, 3).equals("GET")) {
+        if (input.length() >= 3 && input.substring(0, 3).equals("GET")) {
 
-            String content = "<html>\n" +
+            reply = "<html>\n" +
                     "<head>\n" +
                     "  <title>An Example Page</title>\n" +
                     "</head>\n" +
@@ -24,14 +24,16 @@ public class PingPongProtocol {
                     "</body>\n" +
                     "</html>";
 
-            return String.format("HTTP/1.1 200 OK\n" +
+            reply = String.format("HTTP/1.1 200 OK\n" +
                     "Content-Type: text/html; charset=UTF-8\n" +
-                    "Content-Length: %d\n\n%s",content.length(),content);
+                    "Content-Length: %d\n\n%s",reply.length(),reply);
 
-        } else if (index > -1) {
-            return answers[index];
         } else {
-            return "I have no idea what are you talking about!?";
+            reply = super.processInput(input.toUpperCase());
         }
+
+        if (reply == null) return "Protocol failed to execute.";
+
+        return reply;
     }
 }
