@@ -20,6 +20,7 @@ public abstract class GenericProtocol implements IProtocol {
         return answers.size();
     }
 
+    @Override
     public String processInput(String input) {
 
         int index = knownVerbs.indexOf(input.toUpperCase());
