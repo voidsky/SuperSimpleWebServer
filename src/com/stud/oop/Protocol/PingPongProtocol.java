@@ -1,5 +1,9 @@
 package com.stud.oop.Protocol;
 
+interface VerbTest {
+    boolean computeTest(String verb);
+}
+
 public class PingPongProtocol extends GenericProtocol {
 
     public void initialise() {
@@ -13,7 +17,9 @@ public class PingPongProtocol extends GenericProtocol {
 
         String reply;
 
-        if (input.length() >= 3 && input.substring(0, 3).equals("GET")) {
+        VerbTest isThisIsGetRequest = (s) -> s.length()>=3 && s.substring(0, 3).equals("GET");
+        
+        if (isThisIsGetRequest.computeTest(input)) {
 
             reply = "<html>\n" +
                     "<head>\n" +

@@ -1,5 +1,6 @@
 package com.stud.oop.Server;
 
+import com.stud.oop.Logger.SingleLogger;
 import com.stud.oop.Protocol.PingPongProtocol;
 
 import java.io.BufferedReader;
@@ -11,7 +12,7 @@ import java.net.Socket;
 public class ServerBot implements Runnable {
 
     private Socket clientSocket;
-
+    
     public ServerBot(Socket clientSocket) {
         this.clientSocket = clientSocket;
     }

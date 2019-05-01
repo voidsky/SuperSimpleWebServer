@@ -24,11 +24,12 @@ public abstract class GenericProtocol implements IProtocol {
     public String processInput(String input) {
 
         int index = knownVerbs.indexOf(input.toUpperCase());
-
         if (index > -1) {
             return answers.get(index);
+        } else {
+            final StringBuilder allVerbs = new StringBuilder();
+            knownVerbs.forEach(verb -> allVerbs.append(verb+"/"));
+            return allVerbs.toString();
         }
-
-        return null;
     }
 }
